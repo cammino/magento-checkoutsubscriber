@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cammino_Checkoutsubscriber>
+            <version>0.1.0</version>
+        </Cammino_Checkoutsubscriber>
+    </modules>
+    <global>
+        <models>
+            <cammino_checkoutsubscriber>
+                <class>Cammino_Checkoutsubscriber_Model</class>
+            </cammino_checkoutsubscriber>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <checkout_type_onepage_save_order>
+                <observers>
+                    <checkoutsubscriber_observer>
+                        <type>singleton</type>
+                        <class>Cammino_Checkoutsubscriber_Model_Observer</class>
+                        <method>subscribe</method> 
+                    </checkoutsubscriber_observer>
+                </observers>
+            </checkout_type_onepage_save_order>
+        </events>
+    </frontend>
+</config>
